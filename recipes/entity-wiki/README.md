@@ -109,6 +109,9 @@ LLM_API_KEY=<your-openrouter-or-openai-key>
 # LLM_BASE_URL=https://api.openai.com/v1
 # LLM_MODEL=gpt-4o-mini
 # OB_WIKI_OUT_DIR=./wikis
+# OB_WIKI_MAX_TOKENS=4096   # output cap per page (default 2048). A page with many [#id] citations
+#                           # can reach 2048 tokens at under 5,000 characters; a reply cut at the cap
+#                           # is reported as FAILED and not written, so the previous page is kept.
 ```
 
 Done when: `node generate-wiki.mjs --help` prints the usage block without errors.
